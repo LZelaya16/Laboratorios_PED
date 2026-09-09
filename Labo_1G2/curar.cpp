@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
 
 
@@ -10,10 +11,16 @@ void curar(float &vida, float cantidad){
 
 int main(){
 
+    SetConsoleOutputCP(CP_UTF8); 
     float vida = 100.0f;
-    float cantidad = 25.0f;
+    float cantidad = 20.0f;
 
-    curar(vida, cantidad);
+    if(vida < 100.0f){
+        curar(vida, cantidad);
+    }
+    else{
+        cout << "Tu vida ya está al máximo." << endl;
+    }
 
     return 0;
 }
